@@ -96,7 +96,7 @@ async def hino(ctx):
         await ctx.channel.send(f'{ctx.author.mention}: - O Cascão solta o Hino do Curintia')
         await canal.connect()
         voice = discord.VoiceClient = discord.utils.get(client.voice_clients)
-        audio_source = discord.FFmpegPCMAudio('hino.mp3')
+        audio_source = FFmpegPCMAudio('hino.mp3')
         voice.play(audio_source, after=None), print('Deus é Bom o tempo todo')
     except:
         await ctx.channel.send(f'Cê não tá em nenhum canal moscão do carai {ctx.author.mention}')
