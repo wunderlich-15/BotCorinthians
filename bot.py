@@ -4,6 +4,7 @@ from email import utils
 from attr import fields
 from click import pass_context
 import discord
+from discord import FFmpegPCMAudio
 from discord.ext import commands
 from GoogleNews import GoogleNews
 from datetime import *
@@ -128,6 +129,11 @@ async def criador(ctx):
     embed.add_field(name='Insta:', value='https://instagram.com/guilhermewunderlich', inline=False)
     embed.set_thumbnail(url=criador_tumb)
     await ctx.channel.send(embed = embed)
+
+@client.command()
+async def debug(ctx):
+    hora = datetime.now()
+    await ctx.channel.send(f'agr são {hora.hour}')
 
 @client.command()
 async def salve(ctx):
